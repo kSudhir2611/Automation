@@ -1,0 +1,9 @@
+
+url=https://phptravels.net/signup
+fname=first_name:=name
+lname=last_name:=name
+phone=phone:=name
+mail=email:=name
+pass=password:=name
+captch=//*[@id="recaptcha-anchor"]/div[1]:=xpath
+signup=//div[@class='form-group mt-3']:=xpath

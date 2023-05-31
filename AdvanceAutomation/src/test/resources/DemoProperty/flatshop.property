@@ -1,0 +1,8 @@
+
+url=https://www.flatshop.in/my-account/
+rbutton=Register:=linkText
+firstname=billing_first_name:=name
+lastname=reg_billing_last_name:=id
+emal=email:=name
+pass=//input[@id='reg_password']:=xpath
+regi=register:=name

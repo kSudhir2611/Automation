@@ -9,38 +9,39 @@ import org.testng.annotations.Test;
 import helper.BaseClass;
 
 public class DemoPractice extends BaseClass   {
-@Test(description="printing dropdown")
- public  void mainDemo() throws InterruptedException 
+//@Test
+ public  void mainRegister()
  {
-	wd.get("https://www.demoblaze.com/");
+	wd.get("https://parabank.parasoft.com/parabank/admin.htm");
 	wd.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 	
-	//sign in and log in
-	wd.findElement(By.xpath("//li[@class='nav-item']//a[@id='signin2']")).click();
-	wd.findElement(By.id("sign-username")).sendKeys("mahohar123");
-	wd.findElement(By.id("sign-password")).sendKeys("gari@456");
-	wd.findElement(By.xpath("//*[@id=\"signInModal\"]/div/div/div[3]/button[2]")).click();
-	Thread.sleep(2000);
-	Alert alert = wd.switchTo().alert();
-	System.out.println(alert.getText());
-	alert.accept();
+	wd.findElement(By.linkText("Register")).click();
+	wd.findElement(By.id("customer.firstName")).sendKeys("John");
+	wd.findElement(By.id("customer.lastName")).sendKeys("Wick");
+	wd.findElement(By.id("customer.address.street")).sendKeys("Main Road");
+	wd.findElement(By.id("customer.address.city")).sendKeys("Kolhapur");
+	wd.findElement(By.id("customer.address.state")).sendKeys("maharashtra");
+	wd.findElement(By.id("customer.address.zipCode")).sendKeys("416209");
+	wd.findElement(By.id("customer.phoneNumber")).sendKeys("123456");
+	wd.findElement(By.id("customer.ssn")).sendKeys("45696");
+	wd.findElement(By.id("customer.username")).sendKeys("ksameer1126");
+	wd.findElement(By.id("customer.password")).sendKeys("sk@199");
+	wd.findElement(By.id("repeatedPassword")).sendKeys("sk@199");
 	
-	wd.navigate().refresh();
-	Thread.sleep(2000);
-	wd.findElement(By.xpath("//a[@id='login2']")).click();
-	wd.findElement(By.id("loginusername")).sendKeys("manohar123");
-	wd.findElement(By.id("loginpassword")).sendKeys("gari@456");
-	wd.findElement(By.xpath("//*[@id=\"logInModal\"]/div/div/div[3]/button[2]")).click();
-	Thread.sleep(2000);
-	Alert alert1 = wd.switchTo().alert();
-	System.out.println(alert1.getText());
-	alert.accept();
-	
-	System.out.println(wd.findElement(By.xpath("nameofuser")).getText());
-	wd.findElement(By.xpath("//li[@class='nav-item']//a[@id='logout2']")).click();
-	
+	wd.findElement(By.xpath("//input[@value='Register']")).click();
 	
  }
+ 
+@Test
+public void login() 
+{
+	wd.get("https://parabank.parasoft.com/parabank/admin.htm");
+	wd.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+	
+	wd.findElement(By.xpath("//input[@name='username']")).sendKeys("ksameer1126");
+	wd.findElement(By.xpath("//input[@name='username']")).sendKeys("sk@199");
+	wd.findElement(By.xpath("//input[@value='Log In']")).click();
+}
 	 	
  }
 

@@ -1,0 +1,16 @@
+chrkey=webdriver.chrome.driver
+
+cpath=src\\test\\resources\\resources\\chromedriver.exe
+
+url=https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+
+uname=username:=name
+unamevalue=Admin
+
+pword=password:=name
+pwordvalue=admin123
+
+login=button[type=submit]:=cssSelector
+
+drp=oxd-userdropdown-tab:=className
+logout=Logout:=linkText
